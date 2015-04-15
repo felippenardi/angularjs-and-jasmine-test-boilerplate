@@ -1,35 +1,31 @@
 describe('Controller: MainCtrl', function() {
   var scope,
   MainCtrl,
-  serviceMock,
-  q;
+  serviceMock;
 
   beforeEach(module('myApp'));
 
-  beforeEach(inject(
-      function ($controller, $rootScope, $q) {
-        q = $q;
-        scope = $rootScope.$new();
-
-        MainCtrl = $controller('MainCtrl', {
-          $scope: scope,
-          myService: serviceMock
-        });
-
-        scope.$apply();
-      }
-      ));
-
   serviceMock = {
-    get: function() {
-      var answer = q.defer();
-      frases.resolve(["A","B","C"]);
-      return answer.promise;
-    }
-
+    collection: [7, 9, 42],
+    value: 42
   };
 
-  it('tests something', function() {
+  beforeEach(inject(
+    function ($controller, $rootScope) {
+      scope = $rootScope.$new();
+
+      MainCtrl = $controller('MainCtrl', {
+        $scope: scope,
+        myService: serviceMock
+      });
+
+      scope.$apply();
+    }
+  ));
+
+  it('mocks the service used in the controller', function() {
+    expect(MainCtrl.myObject).toEqual([7,9,42]);
+    expect(MainCtrl.myFavoriteValue).toBe(42);
   });
 
 });
