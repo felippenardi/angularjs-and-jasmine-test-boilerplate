@@ -1,20 +1,24 @@
-# angularjs-and-jasmine-test-boilerplate
+### Learn AngularJS TDD without the magic.
+[![Book session on Codementor](https://cdn.codementor.io/badges/book_session_github.svg)](https://www.codementor.io/felippenardi)
 
-Learn AngularJS TDD without the magic.
+I've seen a lot of people struggling to understand how to do TDD in AngularJS, so I create this repository: **a simple AngularJS app setup with Jasmine and an Html Test Runner**.
 
-It is great to have a full featured commandline test runner simultaneously testing multiple browsers and continous integration ready. ''But you probably don't need it right now.''
+## What it is
 
+* [spec/app-spec.js](spec/app-spec.js) holds your jasmine tests
+* [js/app.js](js/app.js) holds your angularjs app
+* [test-runner/index.html](test-runner/index.html) is your test runner
 
-The simplest example of TDD AngularJS with Jasmine
+## How to use
 
+* Write tests on [spec/app-spec.js](spec/app-spec.js)
+* Create your Angular App on [js/app.js](js/app.js)
+* Run your test by refreshing [test-runner/index.html](test-runner/index.html) as you go
 
-This repository contains everything you need get started pratcing some TDD on AngularJS. This is the bare minimum.
+## Conclusion
 
-## Getting started
+If I could get you to read the source of just one file, that would be  [test-runner/index.html](test-runner/index.html). This file removes all the magic around testing Javascript—test runners are just getting the test library, your code, and putting them together.
 
-This is pure HTML and Javascript. The test runner is a single html. 
+If you are getting started with tests, you can use the single-html and later switch to another test runner with more features—like [Karma](https://github.com/karma-runner/karma) or [Testem](https://github.com/airportyh/testem) (my favorite).
 
-* Clone the repository
-* Open `test-runner/index.html`
-
-Tha
+Have fun!
